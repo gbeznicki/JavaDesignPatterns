@@ -9,6 +9,10 @@ public class LunchOrder {
         public Builder(){
         }
 
+        public LunchOrder build(){
+            return new LunchOrder(this);
+        }
+
         public Builder bread(String bread){
             this.bread = bread;
             return this;
@@ -37,7 +41,10 @@ public class LunchOrder {
     private final String meat;
 
     private LunchOrder(Builder builder){
-
+        this.bread = builder.bread;
+        this.condiments = builder.condiments;
+        this.dressing = builder.dressing;
+        this.meat = builder.meat;
     }
 
     public String getBread() {
